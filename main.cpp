@@ -89,6 +89,24 @@ public:
 private:
 };
 
+class D {
+public:
+	D() {
+		r = g = 0;
+	}
+	D(int r, int g) {
+		this->r = r;
+		this->g = g;
+	}
+	void getInfo() {
+		std::cout << "r = " << r << "; g = " << g << std::endl;
+	}
+	~D() {};
+private:
+	int r;
+	int g;
+};
+
 void manufactured(int a, int b) {
 	std::cout << a + b << std::endl;
 }
@@ -131,4 +149,10 @@ int main(){
 	C qwe;
 	qwe.setC(111);
 	qwe.Print();
+	
+	const int LENGTH = 5;
+	D* arr = new D[LENGTH];
+	arr[2]={ 24, 514 };
+	arr[2].getInfo();
+	delete[] arr;
 }
